@@ -1112,7 +1112,6 @@ class GenerationSettingsDialog(Dialog):
         self.generation_control = FullGenerationSettings(orig_params, user_params, state, realtime_update=False)
         Dialog.__init__(self, parent, title="Generation Settings")
 
-    # Creates sliders for each sensitivity slider
     def body(self, master):
         self.generation_control.body(master)
 

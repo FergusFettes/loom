@@ -144,8 +144,6 @@ DEFAULT_MODEL_CONFIG = {
         "gpt-j-6b": {"type": "gooseai"},
         "gpt-neo-20b": {"type": "gooseai"},
     },
-    #'OPENAI_API_KEY': os.environ.get("OPENAI_API_KEY", None),
-    #'AI21_API_KEY': os.environ.get("AI21_API_KEY", None),
 }
 
 DEFAULT_INLINE_GENERATION_SETTINGS = {
@@ -315,8 +313,6 @@ class TreeModel:
     @property
     def vars(self):
         return self.state["vars"]
-
-    # user frame
 
     @property
     def user_preferences(self):
@@ -2138,22 +2134,6 @@ class TreeModel:
                 engine=engine,
             )
 
-        # TODO multi threading
-
-    def generate_adaptive_tree(
-        self,
-        node=None,
-        max_depth=3,
-        branching_factor=2,
-        max_interval=100,
-        algorithm="min",
-        min_interval=None,
-        stop_condition=None,
-    ):
-        pass
-
-        # TODO range
-
     def semantic_search_memory(self, node, document_limit=100, max_length=1000):
         documents = []
 
@@ -2188,15 +2168,8 @@ class TreeModel:
 
     # submit modifications appended to user input
     def post_modifications(self, text):
-        # if self.preferences['gpt_mode'] == 'dialogue':
-        #     # add punctuation if there isn't any
-        #     if len(text) > 0 and text[-1] not in [',', '.', '!', '?', '-']:
-        #         # TODO figure out most appropriate punctuation using gpt
-        #         text = text + '.'
-        #     text = text + '"'
         return text
 
-    # TODO token index ???
     def score_counterfactual(self, node=None, target=None, context_breaker="", engine="curie"):
         if not target:
             return
@@ -2307,10 +2280,6 @@ class TreeModel:
 
         return optimization_info
 
-        # TODO selection optimization
-
-    # TODO removed tokens
-    # TODO deprecated
     def changed_tokens_logprobs(self, node=None):
         node = node if node else self.selected_node
         if "meta" in node and "source" in node["meta"]:
@@ -2349,7 +2318,6 @@ class TreeModel:
                     index += 1
                 return changed_indices, tokens[start_index:]
 
-    # TODO count all AI siblings of current node regardless of order?
     def selection_optimization(self, node, final_node=None):
         final_node = final_node if final_node else self.selected_node
         siblings = self.parent(node)["children"]

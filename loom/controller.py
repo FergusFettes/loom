@@ -673,6 +673,7 @@ class Controller:
 
     @metadata(name="Generate", keys=["<g>", "<Control-g>"], display_key="g")
     def generate(self, node=None, **kwargs):
+        __import__("ipdb").set_trace()
         if node is None:
             node = self.state.selected_node
         try:
@@ -1876,7 +1877,7 @@ class Controller:
 
     @metadata(name="Generation Settings", keys=["<Control-Shift-KeyPress-P>"], display_key="ctrl-p")
     def generation_settings_dialog(self):
-        dialog = GenerationSettingsDialog(
+        GenerationSettingsDialog(
             parent=self.display.frame,
             orig_params=self.state.generation_settings,
             user_params=self.state.user_generation_settings,
