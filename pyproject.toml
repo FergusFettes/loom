@@ -25,9 +25,13 @@ diff-match-patch = "^20200713"
 [project]
 name = "loom"
 version = "0.1.0"
+dynamic = ["dependencies"]
 
 [tool.setuptools.package-data]
 loom = ["loom"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
 
 [build-system]
 requires = ["poetry-core"]
