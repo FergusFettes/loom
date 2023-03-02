@@ -8,7 +8,7 @@ CURRENT_GID := $(shell id -g)
 export CURRENT_UID
 export CURRENT_GID
 
-include .env
+-include .env
 export
 
 install: reqs
