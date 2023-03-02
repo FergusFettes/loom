@@ -246,6 +246,13 @@ Reset zoom: `Control-0`
 
 # Instructions
 
+## Quickstart
+
+```
+make install
+python loom/main.py
+```
+
 ## Python
 
 0. Make sure you have tkinter installed

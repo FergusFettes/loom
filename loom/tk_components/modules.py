@@ -2102,6 +2102,7 @@ class Wavefunction(Module):
             "curie",
             "davinci",
             "text-davinci-002",
+            "text-davinci-003",
             "code-davinci-002",
             "gpt-neo-1-3b",
             "gpt-neo-2-7b",
