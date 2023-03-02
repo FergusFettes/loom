@@ -16,6 +16,7 @@ install: reqs
 	sudo apt install python3-tk
 	python -m pip install --upgrade pip
 	python -m pip install -r requirements.txt
+	python -m pip install -e .
 
 build: reqs
 	docker build -t $(IMAGE) .
