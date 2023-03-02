@@ -1,0 +1,54 @@
+{
+  "choices": [
+    {
+      "finish_reason": "length",
+      "index": 0,
+      "logprobs": {
+        "text_offset": [
+          0,
+          4,
+          11
+        ],
+        "token_logprobs": [
+          null,
+          -12.956981,
+          -2.410658
+        ],
+        "tokens": [
+          "Test",
+          " prompt",
+          "\n"
+        ],
+        "top_logprobs": null
+      },
+      "text": "Test prompt\n"
+    },
+    {
+      "finish_reason": "length",
+      "index": 1,
+      "logprobs": {
+        "text_offset": [
+          0,
+          4,
+          11
+        ],
+        "token_logprobs": [
+          null,
+          -12.956981,
+          -5.0854616
+        ],
+        "tokens": [
+          "Test",
+          " prompt",
+          " on"
+        ],
+        "top_logprobs": null
+      },
+      "text": "Test prompt on"
+    }
+  ],
+  "created": 1632787209,
+  "id": "cmpl-3mupVxCi4CJZQFrbYppUSoWay72UY",
+  "model": "curie:2020-05-03",
+  "object": "text_completion"
+}

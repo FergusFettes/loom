@@ -1,5 +1,5 @@
 
-This is an experimental tree-based writing interface for GPT-3. The code is actively being developed and thus 
+This is an experimental tree-based writing interface for GPT-3. The code is actively being developed and thus
 unstable and poorly documented.
 
 # Features
@@ -8,33 +8,33 @@ unstable and poorly documented.
    * Linear story view
    * Tree nav bar
    * Edit mode
-   
-   
+
+
 * Tree view
    * Explore tree visually with mouse
    * Expand and collapse nodes
    * Change tree topology
    * Edit nodes in place
-   
-   
+
+
 * Navigation
    * Hotkeys
    * Bookmarks
    * Chapters
-   * 'Visited' state   
-   
+   * 'Visited' state
+
 
 * Generation
    * Generate N children with GPT-3
-   * Modify generation settings 
+   * Modify generation settings
    * Change hidden memory on a node-by-node basis
-   
+
 
 * File I/O
-   * Open/save trees as JSON files 
+   * Open/save trees as JSON files
    * Work with trees in multiple tabs
    * Combine trees
-   
+
 
 # Demo
 
@@ -57,7 +57,7 @@ ooo what features! wow so cool
 3. [Optional] Write ground truth continuation in the gray entry box at the bottom of the block multiverse interface. Blocks in ground truth trajectory will be colored black.
 4. Set model and [params](https://generative.ink/meta/block-multiverse/#generation-parameters) in top bar.
 5. Click `Propagate` to propagate plot the block multiverse
-6. Click on any of the blocks to zoom ("[renormalize](https://generative.ink/meta/block-multiverse/#renormalization)") to that block 
+6. Click on any of the blocks to zoom ("[renormalize](https://generative.ink/meta/block-multiverse/#renormalization)") to that block
 7. Click `Propagate` again to plot future block multiverse starting from a renormalized frame
 8. Click `Reset zoom` to reset zoom level to initial position
 9. Click `Clear` to clear the block multiverse plot. Do this before generating a new block multiverse.
@@ -152,7 +152,7 @@ Click to split node: `Control-alt-click`
 Goto node by id: `Control-shift-g`
 
 
-### Organization 
+### Organization
 
 Toggle bookmark: `b`, `Control-b`
 
@@ -246,13 +246,40 @@ Reset zoom: `Control-0`
 
 # Instructions
 
-1. Install requirements 
+## Quickstart
+
+```
+make install
+python loom/main.py
+```
+
+## Python
+
+0. Make sure you have tkinter installed
+
+    ```sudo apt-get install python3-tk```
+1. Setup your python env (should be >= 3.9.13)
+
+        ```python3 -m venv env```
+        ```source env/bin/activate```
+1. Install requirements
 
     ```pip install -r requirements.txt```
-2. Set environmental variables for `OPENAI_API_KEY`, `GOOSEAI_API_KEY`, `AI21_API_KEY` 
+2. [Optional] Set environmental variables for `OPENAI_API_KEY`, `GOOSEAI_API_KEY`, `AI21_API_KEY` (you can also use the settings options)
 
     ```export OPENAI_API_KEY={your api key}```
 3. Run main.py
 4. Load a json tree
 5. Read  :)
 
+## Docker
+
+(Only tested on Linux.)
+
+0. [Optional] Edit the Makefile with your API keys (you can also use the settings options)
+1. Run the make targets
+
+        ```make build```
+        ```make run```
+2. Load a json tree
+3. Read  :)

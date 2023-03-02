@@ -1,0 +1,76 @@
+{
+  "completions": [
+    {
+      "data": {
+        "text": " rate",
+        "tokens": [
+          {
+            "generatedToken": {
+              "logprob": -9.374443054199219,
+              "token": "\u2581rate"
+            },
+            "textRange": {
+              "end": 5,
+              "start": 0
+            },
+            "topTokens": null
+          }
+        ]
+      },
+      "finishReason": {
+        "length": 1,
+        "reason": "length"
+      }
+    },
+    {
+      "data": {
+        "text": " \"",
+        "tokens": [
+          {
+            "generatedToken": {
+              "logprob": -5.296318054199219,
+              "token": "\u2581\""
+            },
+            "textRange": {
+              "end": 2,
+              "start": 0
+            },
+            "topTokens": null
+          }
+        ]
+      },
+      "finishReason": {
+        "length": 1,
+        "reason": "length"
+      }
+    }
+  ],
+  "id": "39bafe61-244d-4e10-ba5f-537bbdd1c274",
+  "prompt": {
+    "text": "Test prompt",
+    "tokens": [
+      {
+        "generatedToken": {
+          "logprob": -9.40399169921875,
+          "token": "\u2581Test"
+        },
+        "textRange": {
+          "end": 4,
+          "start": 0
+        },
+        "topTokens": null
+      },
+      {
+        "generatedToken": {
+          "logprob": -13.457390785217285,
+          "token": "\u2581prompt"
+        },
+        "textRange": {
+          "end": 11,
+          "start": 4
+        },
+        "topTokens": null
+      }
+    ]
+  }
+}
