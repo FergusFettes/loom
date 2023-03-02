@@ -8,14 +8,15 @@ CURRENT_GID := $(shell id -g)
 export CURRENT_UID
 export CURRENT_GID
 
-include .env
+-include .env
 export
 
 install: reqs
 	echo "Make sure you are using python version 3.9.13 or over"
-	sudo apt install python-tk
+	sudo apt install python3-tk
 	python -m pip install --upgrade pip
 	python -m pip install -r requirements.txt
+	python -m pip install -e .
 
 build: reqs
 	docker build -t $(IMAGE) .
