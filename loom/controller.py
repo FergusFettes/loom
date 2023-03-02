@@ -673,7 +673,6 @@ class Controller:
 
     @metadata(name="Generate", keys=["<g>", "<Control-g>"], display_key="g")
     def generate(self, node=None, **kwargs):
-        __import__("ipdb").set_trace()
         if node is None:
             node = self.state.selected_node
         try:
