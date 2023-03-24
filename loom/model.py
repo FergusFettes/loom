@@ -465,9 +465,6 @@ class TreeModel:
         if self.tree_raw_data and rebuild_dict:
             self.rebuild_tree()
 
-    # def tree_updated_silent(self):
-    #     self.rebuild_tree()
-
     @event
     def rebuild_tree(self):
         add_immutable_root(self.tree_raw_data)

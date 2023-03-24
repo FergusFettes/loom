@@ -4,11 +4,13 @@ import os
 import traceback
 from collections import defaultdict
 from copy import deepcopy
+from pathlib import Path
 
 import PIL.Image
 import PIL.ImageTk
 import tkinter as tk
 from dotenv import load_dotenv
+from pandas.core.frame import infer_dtype_from_object
 from tkinter import messagebox
 from ttkthemes import ThemedStyle
 
@@ -45,7 +47,8 @@ class Application:
         self.tabs = []
 
         # Load app data
-        self.app_data_file = os.path.join(os.getcwd(), "./_data/", ".app_data.json")
+        self.app_data_file = Path(os.getcwd()) / "_data" / ".app_data.json"
+
         self.app_data = None
         self.initialize_app_state()
 
@@ -61,14 +64,14 @@ class Application:
         self.root.attributes("-topmost", False)
 
     def initialize_app_state(self):
-        try:
-            self.app_data = json_open(self.app_data_file)  # if os.path.isfile(self.app_data_file) else {}
+        if self.app_data_file.exists():
+            self.app_data = json_open(self.app_data_file)
             for tab_data in self.app_data["tabs"]:
                 self.create_tab(filename=tab_data["filename"])
-        except Exception as e:
+        else:
+            self.app_data_file.parent.mkdir(parents=True, exist_ok=True)
+            self.app_data_file.touch()
             print("Failed to load with app data")
-            print(str(e))
-            print(traceback.format_exc())
             self.app_data = {}
 
         if len(self.tabs) == 0:
